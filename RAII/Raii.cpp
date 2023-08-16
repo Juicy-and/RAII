@@ -19,7 +19,7 @@ void Smart_array::add_element(int i_mas)
 
 int Smart_array::get_element(int index)
 {
-	if (index < 0 || index > count)
+	if (index < 0 || index > count || index >= new_size)
 	{
 		throw ex();
 	}
