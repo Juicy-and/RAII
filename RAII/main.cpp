@@ -17,7 +17,8 @@ int main(){
 
 		arr = new_array;
 		std::cout << new_array.get_element(0) << std::endl;
-		std::cout << arr.get_element(3) << std::endl;
+		std::cout << arr.get_element(0) << std::endl;
+		
 	}
 	catch (const std::exception& ex) {
 		std::cout << ex.what() << std::endl;

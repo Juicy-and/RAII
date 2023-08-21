@@ -1,9 +1,28 @@
 #include "Raii.h"
 #include "ex.h"
+
+Smart_array& Smart_array::operator=(const Smart_array& other)
+{
+	delete[] array;
+	this->count = 0;
+	array = new int[other.new_size];
+	new_size = other.new_size;
+	for (int i = 0; i < other.count; i++)
+		this->add_element(other.array[i]);;
+	return *this;
+}
+Smart_array::Smart_array(const Smart_array& other) {
+	array = new int[other.new_size];
+	new_size = other.new_size;
+	for (int i = 0; i < other.count; i++)
+		this->add_element(other.array[i]);
+}
+
 Smart_array::Smart_array(int full_size) {
 	array = new int[full_size];
     new_size = full_size;
 }
+
 
 
 void Smart_array::add_element(int i_mas)
