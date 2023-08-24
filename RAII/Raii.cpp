@@ -3,12 +3,15 @@
 
 Smart_array& Smart_array::operator=(const Smart_array& other)
 {
+	if (this != &other) {
 	delete[] array;
 	this->count = 0;
 	array = new int[other.new_size];
 	new_size = other.new_size;
 	for (int i = 0; i < other.count; i++)
 		this->add_element(other.array[i]);;
+	return *this;
+	}
 	return *this;
 }
 Smart_array::Smart_array(const Smart_array& other) {
